@@ -1,0 +1,43 @@
+ul.tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li span a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+li span a:hover {
+    background-color: #111111;
+    cursor: pointer;
+}
+
+li span.active {
+    background-color: #555555;
+}
+
+.main-content {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+a.is-active {
+    color: pink;
+    font-weight: bold;
+}
