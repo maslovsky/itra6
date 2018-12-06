@@ -4,6 +4,7 @@ import NewsBlock from './news-block/news-block';
 import NewsService from '../../services/news-service';
 
 import chunkify from '../../helpers/chunk-helper';
+import Loader from "../loader/loader";
 
 class News extends Component {
     constructor(props) {
@@ -25,7 +26,11 @@ class News extends Component {
     render() {
         return (
             <div className="news-list">
-                {this.state.newsList.map((x, i) => this.renderColumn(x, i))}
+                {
+                    this.state.newsList.length
+                        ? this.state.newsList.map((x, i) => this.renderColumn(x, i))
+                        : <Loader />
+                }
             </div>
         );
     }
