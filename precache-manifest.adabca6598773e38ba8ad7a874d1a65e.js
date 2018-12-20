@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/itra6/static/js/runtime~main.4ea9e36a.js"
   },
   {
-    "revision": "2564056b81b28f50f288",
-    "url": "/itra6/static/js/main.2564056b.chunk.js"
+    "revision": "2e6f2304e4879eefcfae",
+    "url": "/itra6/static/js/main.2e6f2304.chunk.js"
   },
   {
-    "revision": "a15b34e1d67a9464b677",
-    "url": "/itra6/static/js/1.a15b34e1.chunk.js"
+    "revision": "44c0b82d41d30e98a5b4",
+    "url": "/itra6/static/js/1.44c0b82d.chunk.js"
   },
   {
-    "revision": "2564056b81b28f50f288",
+    "revision": "2e6f2304e4879eefcfae",
     "url": "/itra6/static/css/main.f27a70ad.chunk.css"
   },
   {
-    "revision": "dfa018a892119b2282c9f89304834e4f",
+    "revision": "2ac2d2ee0bd754732302df75e52bc4a8",
     "url": "/itra6/index.html"
   }
 ];
