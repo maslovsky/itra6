@@ -14,7 +14,7 @@ class App extends Component {
                     <Navigator />
 
                     <div className="main-content">
-                        <Route path="/" exact render={() => <News search={topics.whatIsUp} />} />
+                        <Route path="/itra6" exact render={() => <News search={topics.whatIsUp} />} />
                         <Route path="/bee" exact render={() => <News search={topics.bee} />} />
                         <Route path="/ufo" exact render={() => <News search={topics.ufo} />} />
                         <Route path="/js" exact render={() => <News search={topics.js} />} />
