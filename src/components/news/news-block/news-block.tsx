@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './news-block.css';
 
-class NewsBlock extends Component {
+import NewsModel from '../../../models/news-model';
+
+interface NewsBlockProps {
+    data: NewsModel;
+}
+
+export default class NewsBlock extends Component<NewsBlockProps> {
     render() {
         const {
             urlToImage,
@@ -23,7 +29,7 @@ class NewsBlock extends Component {
                         <div className="title-container">
                             <a className="title" href={url} target="_blank" rel="noopener noreferrer">{title}</a>
 
-                            <div className="source">from: {source.name}</div>
+                            <div className="source">from: {source ? source.name : 'noname'}</div>
                         </div>
 
                         <div className="description">{description}</div>
@@ -42,5 +48,3 @@ class NewsBlock extends Component {
         );
     }
 }
-
-export default NewsBlock;

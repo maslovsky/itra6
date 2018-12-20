@@ -6,24 +6,36 @@ import NewsService from '../../services/news-service';
 import chunkify from '../../helpers/chunk-helper';
 import Loader from "../loader/loader";
 
-class News extends Component {
-    constructor(props) {
+import NewsModel from '../../models/news-model';
+
+//Where to put ?
+interface NewsProps {
+    search: string;
+}
+
+interface NewsState {
+    newsList: NewsModel[][]
+
+}
+
+export default class News extends Component<NewsProps, NewsState> {
+    private columnCount = 3;
+
+    constructor(props: NewsProps) {
         super(props);
 
         this.state  = {
             newsList: []
         };
-
-        this.columnCount = 3;
     }
 
-    componentDidMount() {
+    public componentDidMount() : void {
         new NewsService().getNews(this.props.search).then(result => {
-            this.setState({newsList: chunkify(result.articles, this.columnCount)})
+            this.setState({newsList: chunkify(result, this.columnCount)})
         });
     }
 
-    render() {
+    public render() : JSX.Element {
         return (
             <div className="news-list">
                 {
@@ -35,7 +47,7 @@ class News extends Component {
         );
     }
 
-    renderColumn(columnData, index) {
+    private renderColumn(columnData: NewsModel[], index: number) : JSX.Element {
         return (
             <div className='col-33' key={index}>
                 {columnData.map(this.renderNewsBlock)}
@@ -43,11 +55,9 @@ class News extends Component {
         )
     }
 
-    renderNewsBlock(data, index) {
+    renderNewsBlock(data: NewsModel, index: number) : JSX.Element {
         return (
             <NewsBlock data={data} key={index}/>
         );
     }
 }
-
-export default News;

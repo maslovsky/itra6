@@ -1,4 +1,4 @@
-export default function chunkify(source, n) {
+export default function chunkify<T>(source: T[], n: number) : T[][] {
     if (n < 2) {
         return [source];
     }
@@ -8,8 +8,8 @@ export default function chunkify(source, n) {
         : splitNonSymmetricalArray(source, n);
 }
 
-function splitSymmetricalArray(source, n) {
-    const result = [];
+function splitSymmetricalArray<T>(source: T[], n: number) : T[][] {
+    const result: T[][] = [];
 
     const size = Math.floor(source.length / n);
 
@@ -20,8 +20,9 @@ function splitSymmetricalArray(source, n) {
     return result;
 }
 
-function splitNonSymmetricalArray(source, n) {
-    const result = [];
+function splitNonSymmetricalArray<T>(source: T[], n: number) : T[][] {
+    const result: T[][] = [];
+
     let i = 0;
 
     while (i < source.length) {
